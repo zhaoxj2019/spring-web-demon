@@ -1,4 +1,4 @@
-package com.example.payt;
+package com.example.springwebdemon;
 
 import java.io.Serializable;
 

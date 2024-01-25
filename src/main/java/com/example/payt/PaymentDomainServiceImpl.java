@@ -53,9 +53,15 @@ public class PaymentDomainServiceImpl {
     private PaymentDto call3Pay(String tradeNo, BigDecimal payAmount) {
         PaymentDto paymentDto = new PaymentDto();
         // 第三调用逻辑
-        paymentDto.setTradeNo(tradeNo);
-        paymentDto.setPayNo(UUID.randomUUID().toString());
-        paymentDto.setPayAmount(payAmount);
+        try {
+            paymentDto.setTradeNo(tradeNo);
+            paymentDto.setPayNo(UUID.randomUUID().toString());
+            paymentDto.setPayAmount(payAmount);
+            paymentDto.setSuccess(true);
+        } catch (Exception e) {
+            paymentDto.setSuccess(false);
+            throw new RuntimeException(e);
+        }
 
         return paymentDto;
     }
