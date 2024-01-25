@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 状态机
+ * @author 赵晓军
  */
 public class StateMachine<S extends BaseStatus, E extends BaseEvent> {
     private final Map<StatusEventPair<S, E>, S> statusEventMap = new HashMap<>();
